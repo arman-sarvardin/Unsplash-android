@@ -6,4 +6,10 @@
         android:title="Photos"
         android:icon="@drawable/baseline_photo_library_24"
         />
+    <item
+        android:id="@+id/photo_search"
+        android:enabled="true"
+        android:title="Search"
+        android:icon="@drawable/baseline_search_24"
+        />
 </menu>
