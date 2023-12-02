@@ -10,10 +10,9 @@ interface PhotosService {
     fun getPhotos(): Call<List<PhotoModel>>
 
     companion object {
-        fun newInstance():PhotosService {
+        fun newInstance(): PhotosService {
             val networkProvider = NetworkProvider()
-            val service = networkProvider.retrofit.create(PhotosService::class.java)
-            return service
+            return networkProvider.retrofit.create(PhotosService::class.java)
         }
     }
 }

@@ -41,7 +41,6 @@ class PhotoListAdapter: ListAdapter<PhotoModel, PhotoListAdapter.ViewHolder>(Pho
                 .with(context)
                 .load(model.urls.regular)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .fitCenter()
                 .into(binding.photoImage)
 
 
