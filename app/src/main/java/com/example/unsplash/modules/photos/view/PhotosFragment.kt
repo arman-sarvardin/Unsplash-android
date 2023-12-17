@@ -28,7 +28,8 @@ class PhotosFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = PhotosFragmentBinding.inflate(inflater,container, false)
-
+        val view = binding.root
+        
         return binding.root
     }
 

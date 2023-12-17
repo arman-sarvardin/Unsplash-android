@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import com.example.demo.fragment.SearchPhotosFragment
 import com.example.unsplash.databinding.ActivityMainBinding
 import com.example.unsplash.modules.photos.view.PhotosFragment
-import com.example.unsplash.modules.photos.viewmodel.SearchPhotosViewModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
