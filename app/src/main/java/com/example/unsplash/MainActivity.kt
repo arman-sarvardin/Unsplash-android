@@ -6,12 +6,14 @@ import androidx.fragment.app.Fragment
 import com.example.demo.fragment.SearchPhotosFragment
 import com.example.unsplash.databinding.ActivityMainBinding
 import com.example.unsplash.modules.photos.view.PhotosFragment
+import com.example.unsplash.modules.photos.view.TopicsFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private var initialFragment: Fragment = PhotosFragment.newInstance()
     private val photoListFragment = PhotosFragment()
     private val searchFragment: SearchPhotosFragment = SearchPhotosFragment()
+    private val topicsFragment: TopicsFragment = TopicsFragment.newInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,9 +22,11 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager
             .beginTransaction()
+            .add(R.id.fragment_container_view, topicsFragment)
             .add(R.id.fragment_container_view, photoListFragment)
             .add(R.id.fragment_container_view, searchFragment)
             .hide(searchFragment)
+            .hide(topicsFragment)
             .commit()
 
         binding.bottomNavigation.setOnItemSelectedListener {
@@ -43,6 +47,16 @@ class MainActivity : AppCompatActivity() {
                         .show(searchFragment)
                         .commit()
                     initialFragment = searchFragment
+                    true
+                }
+
+                R.id.topics_fragment -> {
+                    supportFragmentManager
+                        .beginTransaction()
+                        .hide(initialFragment)
+                        .show(topicsFragment)
+                        .commit()
+                    initialFragment = topicsFragment
                     true
                 }
 

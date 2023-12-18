@@ -22,6 +22,9 @@ interface PhotosService {
         @Query("per_page") perPage: Int = 10
     ): Call<SearchPhotosResponseModel>
 
+    @GET("")
+    fun getTopics()
+
 
     companion object {
         fun newInstance(): PhotosService {
