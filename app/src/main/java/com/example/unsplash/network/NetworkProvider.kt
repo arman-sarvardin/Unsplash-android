@@ -1,5 +1,6 @@
 package com.example.unsplash.network
 
+import com.example.unsplash.R
 import okhttp3.OkHttpClient
 import okhttp3.Interceptor
 import okhttp3.logging.HttpLoggingInterceptor
@@ -19,7 +20,7 @@ class NetworkProvider {
                 val originalRequest = it.request()
                 val mofifiedRequest = originalRequest.newBuilder()
                     .addHeader("Accept-Version", "v1")
-                    .addHeader("Authorization", "Client-ID ozez1IOOZAKXZ-OCXGtbUbIdxr7bp2Cr4jpxKLIty5g")
+                    .addHeader("Authorization", "Client-ID ${R.string.access_key}")
                     .build()
                 return@Interceptor it.proceed(mofifiedRequest)
             }

@@ -3,6 +3,7 @@ package com.example.unsplash.network.services
 import com.example.unsplash.modules.photos.model.CategoryModel
 import com.example.unsplash.modules.photos.model.PhotoModel
 import com.example.unsplash.modules.photos.model.SearchPhotosResponseModel
+import com.example.unsplash.modules.photos.model.TopicModel
 import com.example.unsplash.network.NetworkProvider
 import retrofit2.http.GET
 import retrofit2.Call
@@ -22,8 +23,8 @@ interface PhotosService {
         @Query("per_page") perPage: Int = 10
     ): Call<SearchPhotosResponseModel>
 
-    @GET("")
-    fun getTopics()
+    @GET("/topics")
+    fun getTopics(): Call<List<TopicModel>>
 
 
     companion object {
